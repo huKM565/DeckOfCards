@@ -28,6 +28,12 @@ class PlayerHurtEntityEvent: Listener {
                 hurtedEntity.world.dropItemNaturally(hurtedEntity.location, DeckCardsItem.get(DeckOfCardsContainer.getInventoryItems(hurtedEntity)))
                 hurtedEntity.remove()
             }
+
+            if(hurtedEntity is ItemFrame && ItemsManager.getType(hurtedEntity.item) == "card") {
+                Bukkit.getScheduler().runTaskLater(PokerCards.instance, Runnable {
+                    hurtedEntity.remove()
+                }, 1)
+            }
         }
     }
 }
