@@ -10,7 +10,6 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.scheduler.BukkitTask
 import ru.hukm.pokercards.PokerCards
-import ru.hukm.pokercards.items.DeckCardsItem
 import ru.hukm.pokercards.items.DisplayCardItem
 import ru.hukm.pokercards.utils.DeckOfCardsContainer
 import java.util.*
