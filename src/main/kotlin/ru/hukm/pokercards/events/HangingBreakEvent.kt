@@ -1,7 +1,5 @@
 package ru.hukm.pokercards.events
 
-import org.bukkit.Bukkit
-import org.bukkit.entity.Hanging
 import org.bukkit.entity.ItemFrame
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
