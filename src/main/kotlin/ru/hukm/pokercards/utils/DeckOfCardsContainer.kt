@@ -1,6 +1,5 @@
 package ru.hukm.pokercards.utils
 
-import org.bukkit.ChatColor
 import org.bukkit.NamespacedKey
 import org.bukkit.entity.Interaction
 import org.bukkit.inventory.ItemStack
