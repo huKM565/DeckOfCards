@@ -25,7 +25,7 @@ class DeckOfCardsContainer {
             val meta = itemStack.itemMeta
 
             meta.lore = arrayListOf(
-                getString("deckCards.description") + inventoryItems.size
+                getString("deckCards.description") + inventoryItems.count { it != null }
             )
 
             itemStack.itemMeta = meta
