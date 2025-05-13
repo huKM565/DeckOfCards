@@ -6,7 +6,6 @@ import org.bukkit.entity.ItemFrame
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.hanging.HangingBreakEvent
-import ru.hukm.pokercards.PokerCards
 import ru.hukm.pokercards.utils.ItemsManager
 
 class HangingBreakEvent: Listener {
