@@ -3,10 +3,6 @@ package ru.hukm.pokercards.items
 import org.bukkit.Material
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.MapMeta
-import org.bukkit.persistence.PersistentDataType
-import org.hukm.api.Api
-import ru.hukm.pokercards.PokerCards
-import ru.hukm.pokercards.PokerCards.Companion.instance
 import ru.hukm.pokercards.items.DeckCardsItem.Companion.ranks
 import ru.hukm.pokercards.items.DeckCardsItem.Companion.suits
 import ru.hukm.pokercards.utils.CustomMapRender.Companion.mapViews
