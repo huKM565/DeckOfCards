@@ -1,7 +1,6 @@
 package ru.hukm.pokercards.events
 
 import org.bukkit.Bukkit
-import org.bukkit.entity.EntityType
 import org.bukkit.entity.Interaction
 import org.bukkit.entity.ItemFrame
 import org.bukkit.event.EventHandler
