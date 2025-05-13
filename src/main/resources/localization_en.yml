@@ -1,0 +1,40 @@
+deckCards:
+  title: "§7Deck of cards"
+  description: "§8Count: "
+  inventory:
+      title: "§4Deck of cards"
+      randomizeCards:
+        title: "§fRandomize cards"
+      nextPage:
+        title: "§4Next page >>>"
+      previousPage:
+        title: "§4<<< Previous page"
+
+deckCardsEntity:
+  takeCard:
+    isFullInventory: "§4Your inventory is full"
+
+card:
+  hearts:
+    suffix: "§4♥"
+  spades:
+    suffix: "§7♠"
+  diamonds:
+    suffix: "§4♦"
+  clubs:
+    suffix: "§7♣"
+
+  joker: "Joker"
+  ace: "Аce"
+  king: "King"
+  queen: "Queen"
+  jack: "Jack"
+  10: "10"
+  9: "9"
+  8: "8"
+  7: "7"
+  6: "6"
+  5: "5"
+  4: "4"
+  3: "3"
+  2: "2"

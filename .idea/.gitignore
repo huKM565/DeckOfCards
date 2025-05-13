@@ -1,0 +1,20 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+gen/
+
+### Gradle ###
+.gradle/
+target/
+!gradle-wrapper.jar
+# Файлы плагинов
+plugins/*.jar
+!plugins/your-plugin.jar
+
