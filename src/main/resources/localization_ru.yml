@@ -1,0 +1,40 @@
+deckCards:
+  title: "§7Колода карт"
+  description: "§8Количество: "
+  inventory:
+    title: "§4Колода карт"
+    randomizeCards:
+      title: "§fПеретусовать карты"
+    nextPage:
+      title: "§4Следующая страница >>>"
+    previousPage:
+      title: "§4<<< Предыдущая страница"
+
+deckCardsEntity:
+  takeCard:
+    isFullInventory: "§4Ваш инвентарь полон"
+
+card:
+  hearts:
+    suffix: "§4♥"
+  spades:
+    suffix: "§7♠"
+  diamonds:
+    suffix: "§4♦"
+  clubs:
+    suffix: "§7♣"
+
+  joker: "Джокер"
+  ace: "Туз"
+  king: "Король"
+  queen: "Королева"
+  jack: "Валет"
+  10: "10"
+  9: "9"
+  8: "8"
+  7: "7"
+  6: "6"
+  5: "5"
+  4: "4"
+  3: "3"
+  2: "2"

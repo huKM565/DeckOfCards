@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack
 import org.hukm.api.Api
 import ru.hukm.pokercards.PokerCards
 import ru.hukm.pokercards.utils.configuration.Localization.Companion.getString
-import java.util.UUID
+import java.util.*
 
 class DeckOfCardsContainer {
     companion object{
