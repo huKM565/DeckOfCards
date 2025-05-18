@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/deckOfCards.iml" filepath="$PROJECT_DIR$/deckOfCards.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pokercards.iml" filepath="$PROJECT_DIR$/pokercards.iml" />
-    </modules>
-  </component>
-</project>
