@@ -4,8 +4,7 @@
 
 <h2>Craft</h2>
 <h3>To craft a deck of cards, you need six pieces of paper and 6 ink pouches.</h3>
-<img/>
-
+<img src="https://drive.google.com/uc?id=1nG6Il5jTAHgRcFEp-stPQgNZH_zuBz9B" width="300px">
 <hr align="center"></hr>
 
 <h1>How usage deck of cards?</h1>
@@ -29,11 +28,15 @@
     <li>Break(Shift + left-clik)</li>
 </ul>
 
+<hr align="center"></hr>
+
 <h1>How usage card?</h1>
 <p>
     Place card on block(right-click)<br>
     And break(left-click)
 </p>
+
+<hr align="center"></hr>
 
 <h1>Plugin Features</h1>
 <ul>
