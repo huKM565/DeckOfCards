@@ -48,7 +48,6 @@ class PlayerClickEvent: Listener{
                 val deckCardsLocation = clickedBlock.location.add(0.0, 1.0, 0.0)
                 DeckCardsEntity.spawn(deckCardsLocation, item)
 
-                if(item.amount == 1) item.type = Material.AIR
                 item.amount -= 1
 
                 return true
