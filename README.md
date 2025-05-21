@@ -4,7 +4,7 @@
 
 <h2>Craft</h2>
 <h3>To craft a deck of cards, you need six pieces of paper and 6 ink pouches.</h3>
-<img src="https://drive.google.com/uc?id=1nG6Il5jTAHgRcFEp-stPQgNZH_zuBz9B" width="300px">
+<img src="https://drive.google.com/uc?id=1nG6Il5jTAHgRcFEp-stPQgNZH_zuBz9B" width="400px">
 <hr align="center"></hr>
 
 <h1>How usage deck of cards?</h1>
@@ -20,6 +20,7 @@
     <li>You can put only cards in the deck</li>
     <li>Shuffle card button (dragon egg)</li>
 </ul>
+<img src="https://drive.google.com/uc?id=1YL9r6uh5ip9cuqi7fPWQrPMvwqz_XmaL" width="400px" alt="">
 
 <h2>Use it as a block:</h2>
 <ul>
@@ -27,6 +28,7 @@
     <li>Take card(right-click)</li>
     <li>Break(Shift + left-clik)</li>
 </ul>
+<img src="https://drive.google.com/uc?id=1EgAFv2brnW-aw5syzn5yY8qsnNnlIXYn" width="400px">
 
 <hr align="center"></hr>
 
