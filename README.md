@@ -37,6 +37,7 @@
     Place card on block(right-click)<br>
     And break(left-click)
 </p>
+<img src="https://hukm-files.ydns.eu/github/deckofcards/use_card.gif" width="800px">
 
 <hr align="center"></hr>
 
