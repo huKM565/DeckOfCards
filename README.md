@@ -48,5 +48,6 @@
         <p>There are two languages available: Russian and English<br> 
             You can change one of the configuration files to change the names or translate everything into your language.
         </p>
+        <li>
     </li>
 </ul>
