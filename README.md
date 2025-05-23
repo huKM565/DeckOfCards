@@ -46,7 +46,8 @@
     <li>
         <h2>Localazation</h2>
         <p>There are two languages available: Russian and English<br> 
-            You can change one of the configuration files to change the names or translate everything into your language.
+            You can change one of the configuration files to change the names or translate everything into your language.<br>
+            Select language you can in config.yml(ru, en...)
         </p>
         <li>
     </li>
