@@ -49,6 +49,5 @@
             You can change one of the configuration files to change the names or translate everything into your language.<br>
             Select language you can in config.yml(ru, en...)
         </p>
-        <li>
     </li>
 </ul>
