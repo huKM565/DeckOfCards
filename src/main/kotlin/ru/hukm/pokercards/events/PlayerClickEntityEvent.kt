@@ -34,17 +34,12 @@ class PlayerClickEntityEvent: Listener {
 
             setCountCardsInName(clickedEntity)
 
-            if(DeckOfCardsContainer.getInventoryItems(clickedEntity).count {it != null} == 0) {
+            if(DeckOfCardsContainer.getInventoryItems(clickedEntity).count {it != null} != 0) {
                 DeckCardsEntity.startTakeCardAnimation(player, clickedEntity)
                 player.swingMainHand()
             }
         }
 
-        if (clickedEntity is ItemFrame && ItemsManager.getType(clickedEntity.item) == "card") {
-            Bukkit.getScheduler().runTaskLater(PokerCards.instance, Runnable {
-                clickedEntity.remove()
-            }, 1)
-        }
     }
 
     private fun deacreaseLastAndSetItems(array: ArrayList<ItemStack?>, interaction: Interaction): ItemStack? {
