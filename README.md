@@ -57,5 +57,6 @@
 <h1>Versions</h1>
 <ul>
     <li>Tested versions: 1.21</li>
-    <li>Available versions: 1.19.4 - 1.21.x</li>
+    <li>Available versions: 1.21 - 1.21.x</li>
+    <h3>Lower versions will not work correctly.</h3>
 </ul>
