@@ -13,6 +13,7 @@ class WorldContainer {
 
         fun getMapsIds(): ArrayList<Int> = Api.base64GetContainerValue(overworld, keyMapsIds, ArrayList<Int>()::class.java)
         fun setMapsIds(ids: ArrayList<Int>) = Api.base64SetContainerValue(overworld, keyMapsIds, ids)
+        fun clearMapsIds() = setMapsIds(arrayListOf<Int>())
         fun hasMapsIds(): Boolean = Api.hasContainerValue(overworld, keyMapsIds, PersistentDataType.STRING)
     }
 }
