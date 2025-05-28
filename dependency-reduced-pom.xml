@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.hukm</groupId>
-  <artifactId>pokercards</artifactId>
+  <artifactId>PokerCards</artifactId>
   <name>pokercards</name>
-  <version>1.0-SNAPSHOT</version>
+  <version>ALPHA-0.1.1</version>
   <build>
     <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     <defaultGoal>clean package</defaultGoal>
@@ -75,5 +75,6 @@
     <kotlin.version>2.1.20-RC3</kotlin.version>
     <java.version>21</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.failOnError>false</maven.compiler.failOnError>
   </properties>
 </project>

@@ -1,5 +1,5 @@
 name: pokercards
-version: '1.0-SNAPSHOT'
+version: 'ALPHA-0.1.1'
 main: ru.hukm.pokercards.PokerCards
-api-version: '1.19'
+api-version: '1.21'
 author: huKM
