@@ -18,9 +18,8 @@ class PlayerHurtEntityEvent: Listener {
     fun onPlayerHurtEntityEvent(event: EntityDamageByEntityEvent) {
         val hurtedEntity = event.entity
         val damager = event.damager
-
         if(damager is Player) {
-            if(hurtedEntity is Interaction && damager.isSneaking) {
+            if(hurtedEntity is Interaction && damager.isSneaking && DeckOfCardsContainer.getInventoryItems(hurtedEntity) != null) {
                 DeckOfCardsContainer.getItemDisplayesUUID(hurtedEntity)?.forEach {
                     Bukkit.getEntity(it)?.remove()
                 }
