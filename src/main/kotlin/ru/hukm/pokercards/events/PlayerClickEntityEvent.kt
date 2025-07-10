@@ -1,18 +1,14 @@
 package ru.hukm.pokercards.events
 
-import org.bukkit.Bukkit
 import org.bukkit.entity.Interaction
-import org.bukkit.entity.ItemFrame
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerInteractEntityEvent
 import org.bukkit.inventory.ItemStack
 import org.hukm.api.Api
-import ru.hukm.pokercards.PokerCards
 import ru.hukm.pokercards.entity.DeckCardsEntity
 import ru.hukm.pokercards.entity.DeckCardsEntity.Companion.setCountCardsInName
 import ru.hukm.pokercards.utils.DeckOfCardsContainer
-import ru.hukm.pokercards.utils.ItemsManager
 import ru.hukm.pokercards.utils.configuration.Localization.Companion.getString
 
 class PlayerClickEntityEvent: Listener {
@@ -38,15 +34,7 @@ class PlayerClickEntityEvent: Listener {
                     player.swingMainHand()
                 }
             }
-
-            setCountCardsInName(clickedEntity)
-
-            if(DeckOfCardsContainer.getInventoryItems(clickedEntity).count {it != null} != 0) {
-                DeckCardsEntity.startTakeCardAnimation(player, clickedEntity)
-                player.swingMainHand()
-            }
         }
-
     }
 
     private fun deacreaseLastAndSetItems(array: ArrayList<ItemStack?>, interaction: Interaction): ItemStack? {
