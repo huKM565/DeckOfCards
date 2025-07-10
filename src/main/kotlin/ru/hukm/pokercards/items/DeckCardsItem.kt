@@ -152,7 +152,9 @@ class DeckCardsItem {
         private fun addItems(items: ArrayList<ItemStack?>, startIndex: Int, endIndex: Int, inventory: Inventory) {
             val missSlots = arrayListOf<Int>()
 
-            ArrayList(items.subList(startIndex, endIndex)).forEachIndexed { index, it ->
+            if(items.isEmpty()) return
+
+            ArrayList(items.subList(startIndex, Math.min(endIndex, items.size - 1))).forEachIndexed { index, it ->
                 if (it == null) missSlots.add(slotsForItems[index])
                 else addItemToNextFreeSlot(inventory, it, missSlots)
             }
