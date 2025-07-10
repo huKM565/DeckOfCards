@@ -4,7 +4,7 @@
   <groupId>ru.hukm</groupId>
   <artifactId>PokerCards</artifactId>
   <name>pokercards</name>
-  <version>BETA-0.1.3</version>
+  <version>BETA-0.1.4</version>
   <build>
     <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     <defaultGoal>clean package</defaultGoal>
