@@ -110,7 +110,10 @@ class DeckCardsItem {
                 var itemInventory = DeckOfCardsContainer.getInventoryItems(deckOfCardsItem)!!
 
                 if(inventory.holder is First) {
-                    items.addAll(ArrayList(itemInventory.subList(slotsForItems.size, itemInventory.size)))
+                    try {
+                        items.addAll(ArrayList(itemInventory.subList(slotsForItems.size, itemInventory.size)))
+                    }catch (ignored: IllegalArgumentException) {}
+
                     DeckOfCardsContainer.setInventoryItemsAndSetCountInLore(deckOfCardsItem, items)
                 }else{
                     itemInventory = ArrayList(itemInventory.subList(0, slotsForItems.size))
@@ -154,10 +157,12 @@ class DeckCardsItem {
 
             if(items.isEmpty()) return
 
-            ArrayList(items.subList(startIndex, Math.min(endIndex, items.size))).forEachIndexed { index, it ->
-                if (it == null) missSlots.add(slotsForItems[index])
-                else addItemToNextFreeSlot(inventory, it, missSlots)
-            }
+            try{
+                ArrayList(items.subList(startIndex, Math.min(endIndex, items.size))).forEachIndexed { index, it ->
+                    if (it == null) missSlots.add(slotsForItems[index])
+                    else addItemToNextFreeSlot(inventory, it, missSlots)
+                }
+            }catch (ignored: IllegalArgumentException) {}
         }
 
         private fun addItemToNextFreeSlot(inventory: Inventory, addItem: ItemStack, missSlots: ArrayList<Int>) {

@@ -10,7 +10,7 @@ class ItemsManager {
     companion object {
         private val key = NamespacedKey(PokerCards.instance, "typeItem")
 
-        fun setType(item: ItemStack, type: String) = Api.setContainerValue(item, key, PersistentDataType.STRING, type)
+        fun setType(item: ItemStack, type: String): ItemStack? = Api.setContainerValue(item, key, PersistentDataType.STRING, type)
 
         fun getType(item: ItemStack?): String? {
             if(item == null) return null

@@ -18,6 +18,7 @@ class DeckOfCardsEvent {
         fun init(inventoryView: InventoryView, rawSlot: Int, event: Cancellable, isMove: Boolean) {
             if(rawSlot == -999) return
 
+
             val inventory = inventoryView.topInventory
             val inventoryHolder = inventory.holder
             val item = inventoryView.getItem(rawSlot)
@@ -52,7 +53,7 @@ class DeckOfCardsEvent {
         }
 
         private fun getSlotToMove(rawSlot: Int, inventoryView: InventoryView, duplicateItem: ItemStack?): Int {
-            val range = if(rawSlot < 54) (inventoryView.countSlots() - 6) downTo 54 else 0..53
+            val range = if(rawSlot < 54) (inventoryView.countSlots() - 8) downTo 54 else 0..53
 
             for(i in range) {
                 val item = inventoryView.getItem(i)
@@ -70,24 +71,21 @@ class DeckOfCardsEvent {
             val inventory = inventoryView.topInventory
             val item = inventoryView.getItem(slotToMove)
 
+            println(slotToMove)
+
             DeckCardsItem.getFromHands(player)?.let {
                 if(item != null) {
                     if(ItemsManager.getType(item).equals("card")) {
                         DeckCardsItem.Menu.updateDeckCardsInventory(inventory, it)
                         DeckCardsItem.playMoveCardSoundAround(player)
+                        player.openInventory(DeckCardsItem.Menu().getInventory(it, inventory.holder!!)!!)
                     }
 
                     if(DeckCardsItem.Menu.isMenu(inventory)) {
                         if(ItemsManager.getType(item) == "randomizeCards") {
-                            val randomItems = DeckOfCardsContainer.getInventoryItems(it)!!.filter { item -> item != null }.shuffled() as MutableList
+                            val randomItems = DeckOfCardsContainer.getInventoryItems(it)!!.filter { item -> item != null }.shuffled()
 
-                            for(i in randomItems.indices) {
-                                try {
-                                    randomItems[i] ?: randomItems.removeAt(i)
-                                }catch (ignored: IndexOutOfBoundsException) {
-                                    break
-                                }
-                            }
+                            println(randomItems.size)
 
                             DeckOfCardsContainer.setInventoryItemsAndSetCountInLore(it, randomItems as ArrayList<ItemStack?>)
                             player.openInventory(DeckCardsItem.Menu().getInventory(it, inventory.holder!!)!!)
