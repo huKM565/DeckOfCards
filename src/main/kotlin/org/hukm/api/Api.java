@@ -32,8 +32,8 @@ public final class Api extends JavaPlugin {
 
     public static boolean isFullInventory(Inventory inventory) {
         int countDeleteInventoryContains = 0;
-        if(inventory.getSize() == 41 ) countDeleteInventoryContains = 5;
-        for(int i = 0; i < inventory.getSize() - countDeleteInventoryContains; i++) if(inventory.getContents()[i] == null) return false;
+        if(inventory.getSize() >= 43) countDeleteInventoryContains = 7;
+        for(int i = 0; i < inventory.getSize() - countDeleteInventoryContains; i++) if(inventory.getItem(i) == null) return false;
         return true;
     }
 
