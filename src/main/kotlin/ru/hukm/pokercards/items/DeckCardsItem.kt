@@ -154,7 +154,7 @@ class DeckCardsItem {
 
             if(items.isEmpty()) return
 
-            ArrayList(items.subList(startIndex, Math.min(endIndex, items.size - 1))).forEachIndexed { index, it ->
+            ArrayList(items.subList(startIndex, Math.min(endIndex, items.size))).forEachIndexed { index, it ->
                 if (it == null) missSlots.add(slotsForItems[index])
                 else addItemToNextFreeSlot(inventory, it, missSlots)
             }
