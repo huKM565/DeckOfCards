@@ -15,7 +15,6 @@ class PlayerInventoryClickEvent: Listener {
     fun onPlayerInventoryClickEvent(event: InventoryClickEvent) {
         val player = event.whoClicked as Player
 
-        println("OK0")
         if (event.action == InventoryAction.MOVE_TO_OTHER_INVENTORY) DeckOfCardsEvent.init(event.view, event.rawSlot, event, true)
         else DeckOfCardsEvent.init(event.view, event.rawSlot, event, false)
 

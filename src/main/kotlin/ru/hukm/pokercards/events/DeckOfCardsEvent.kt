@@ -71,8 +71,6 @@ class DeckOfCardsEvent {
             val inventory = inventoryView.topInventory
             val item = inventoryView.getItem(slotToMove)
 
-            println(slotToMove)
-
             DeckCardsItem.getFromHands(player)?.let {
                 if(item != null) {
                     if(ItemsManager.getType(item).equals("card")) {
@@ -85,7 +83,6 @@ class DeckOfCardsEvent {
                         if(ItemsManager.getType(item) == "randomizeCards") {
                             val randomItems = DeckOfCardsContainer.getInventoryItems(it)!!.filter { item -> item != null }.shuffled()
 
-                            println(randomItems.size)
 
                             DeckOfCardsContainer.setInventoryItemsAndSetCountInLore(it, randomItems as ArrayList<ItemStack?>)
                             player.openInventory(DeckCardsItem.Menu().getInventory(it, inventory.holder!!)!!)
