@@ -30,6 +30,13 @@ class PlayerClickEntityEvent: Listener {
             }else {
                 val item = deacreaseLastAndSetItems(contents, clickedEntity)
                 if(item != null) Api.giveItem(item, player)
+
+                setCountCardsInName(clickedEntity)
+
+                if(DeckOfCardsContainer.getInventoryItems(clickedEntity).count {it != null} != 0) {
+                    DeckCardsEntity.startTakeCardAnimation(player, clickedEntity)
+                    player.swingMainHand()
+                }
             }
 
             setCountCardsInName(clickedEntity)
