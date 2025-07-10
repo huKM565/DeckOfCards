@@ -79,7 +79,7 @@ class DeckOfCardsEvent {
 
                     if(DeckCardsItem.Menu.isMenu(inventory)) {
                         if(ItemsManager.getType(item) == "randomizeCards") {
-                            val randomItems = DeckOfCardsContainer.getInventoryItems(it)!!.shuffled() as MutableList
+                            val randomItems = DeckOfCardsContainer.getInventoryItems(it)!!.filter { item -> item != null }.shuffled() as MutableList
 
                             for(i in randomItems.indices) {
                                 try {
