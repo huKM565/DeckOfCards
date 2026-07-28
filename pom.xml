@@ -6,7 +6,7 @@
 
     <groupId>ru.hukm</groupId>
     <artifactId>PokerCards</artifactId>
-    <version>BETA-0.1.4</version>
+    <version>BETA-0.2.0</version>
     <packaging>jar</packaging>
 
     <name>pokercards</name>
@@ -49,6 +49,14 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>kotlin</pattern>
+                                    <shadedPattern>ru.hukm.pokercards.libs.kotlin</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

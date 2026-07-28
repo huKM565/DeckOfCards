@@ -4,7 +4,7 @@
   <groupId>ru.hukm</groupId>
   <artifactId>PokerCards</artifactId>
   <name>pokercards</name>
-  <version>BETA-0.1.4</version>
+  <version>BETA-0.2.0</version>
   <build>
     <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     <defaultGoal>clean package</defaultGoal>
@@ -41,6 +41,14 @@
             <goals>
               <goal>shade</goal>
             </goals>
+            <configuration>
+              <relocations>
+                <relocation>
+                  <pattern>kotlin</pattern>
+                  <shadedPattern>ru.hukm.pokercards.libs.kotlin</shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
           </execution>
         </executions>
       </plugin>

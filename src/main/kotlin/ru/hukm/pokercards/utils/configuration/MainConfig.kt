@@ -32,6 +32,10 @@ class MainConfig {
             instance.saveConfig()
         }
 
+        fun getDeckCollectCardsRadius(): Double {
+            return config.getDouble("deck-collect-cards-radius", 8.0)
+        }
+
     }
 
 }

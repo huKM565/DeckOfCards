@@ -1,13 +1,17 @@
 package ru.hukm.pokercards.events
 
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.entity.Interaction
 import org.bukkit.entity.ItemFrame
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent
+import org.bukkit.inventory.ItemStack
+import org.hukm.api.Api
 import ru.hukm.pokercards.PokerCards
+import ru.hukm.pokercards.entity.DeckCardsEntity
 import ru.hukm.pokercards.items.DeckCardsItem
 import ru.hukm.pokercards.utils.DeckOfCardsContainer
 import ru.hukm.pokercards.utils.ItemsManager
@@ -29,9 +33,10 @@ class PlayerHurtEntityEvent: Listener {
             }
 
             if(hurtedEntity is ItemFrame && ItemsManager.getType(hurtedEntity.item) == "card") {
-                Bukkit.getScheduler().runTaskLater(PokerCards.instance, Runnable {
-                    hurtedEntity.remove()
-                }, 1)
+                DeckCardsEntity.startTakeCardAnimation(damager, hurtedEntity)
+                Api.giveItem(hurtedEntity.item, damager)
+                hurtedEntity.setItem(ItemStack(Material.AIR))
+                hurtedEntity.remove()
             }
         }
     }

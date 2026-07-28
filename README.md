@@ -4,7 +4,7 @@
 
 <h2>Craft</h2>
 <h3>To craft a deck of cards, you need six pieces of paper and 6 ink pouches.</h3>
-<img src="https://hukm-files.ydns.eu/github/deckofcards/craft.gif" width="800px">
+<img src="https://raw.githubusercontent.com/hukm565/DeckOfCards/beta/assets/deckOfCards-craft.gif" width="800px">
 <hr align="center"></hr>
 
 <h1>How usage deck of cards?</h1>
@@ -20,15 +20,17 @@
     <li>You can put only cards in the deck</li>
     <li>Shuffle card button (dragon egg)</li>
 </ul>
-<img src="https://hukm-files.ydns.eu/github/deckofcards/use_item.gif" width="800px" alt="">
+<img src="https://raw.githubusercontent.com/hukm565/DeckOfCards/beta/assets/deckOfCards-use.gif" width="800px" alt="">
 
 <h2>Use it as a block:</h2>
 <ul>
-    <li>Place(Shift + right-click)</li>
+    <li>Place(Shift + right-click on a block)</li>
     <li>Take card(right-click)</li>
+    <li>Collect nearby placed cards back into the deck(Shift + right-click on the deck)</li>
     <li>Break(Shift + left-click)</li>
 </ul>
-<img src="https://hukm-files.ydns.eu/github/deckofcards/use_block.gif" width="800px">
+<p>The collect radius is configurable in <code>config.yml</code> (<code>deck-collect-cards-radius</code>, default 8).</p>
+<img src="https://raw.githubusercontent.com/hukm565/DeckOfCards/beta/assets/deckOfCards-block.gif" width="800px">
 
 <hr align="center"></hr>
 
@@ -37,7 +39,7 @@
     Place card on block(right-click)<br>
     And break(left-click)
 </p>
-<img src="https://hukm-files.ydns.eu/github/deckofcards/use_card.gif" width="800px">
+<img src="https://raw.githubusercontent.com/hukm565/DeckOfCards/beta/assets/deckOfCards-set.gif" width="800px">
 
 <hr align="center"></hr>
 
@@ -50,13 +52,21 @@
             Select language you can in config.yml(ru, en...)
         </p>
     </li>
+    <li>
+        <h2>Configuration</h2>
+        <p>config.yml options:</p>
+        <ul>
+            <li><code>language</code> — interface language (ru, en...)</li>
+            <li><code>deck-collect-cards-radius</code> — radius for collecting nearby cards into the deck (default 8)</li>
+        </ul>
+    </li>
 </ul>
 
 <hr align="center"></hr>
 
 <h1>Versions</h1>
 <ul>
-    <li>Tested versions: 1.21</li>
-    <li>Available versions: 1.21 - 1.21.x</li>
-    <h3>Lower versions will not work correctly.</h3>
+    <li>Tested versions: 1.21, 26.2</li>
+    <li>Minimum version: 1.21</li>
+    <h3>Older versions will not work correctly.</h3>
 </ul>

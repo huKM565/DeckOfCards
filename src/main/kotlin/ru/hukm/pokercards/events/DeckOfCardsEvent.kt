@@ -18,7 +18,6 @@ class DeckOfCardsEvent {
         fun init(inventoryView: InventoryView, rawSlot: Int, event: Cancellable, isMove: Boolean) {
             if(rawSlot == -999) return
 
-
             val inventory = inventoryView.topInventory
             val inventoryHolder = inventory.holder
             val item = inventoryView.getItem(rawSlot)
@@ -44,12 +43,22 @@ class DeckOfCardsEvent {
                 }
 
                 val slotToMove = if(isMove) getSlotToMove(rawSlot, inventoryView, item) else rawSlot
-                if(slotToMove < 54 && type == null && inventoryView.cursor.type == Material.AIR) event.isCancelled = true
+                if(slotToMove < 54 && type == null && inventoryView.cursor!!.type == Material.AIR) event.isCancelled = true
 
                 Bukkit.getScheduler().runTaskLater(PokerCards.instance, Runnable {
                     delayPlayerInventoryClickEvent(inventoryView, slotToMove, player)
                 }, 1)
             }
+        }
+
+        fun handleDrop(inventoryView: InventoryView, player: Player) {
+            Bukkit.getScheduler().runTaskLater(PokerCards.instance, Runnable {
+                val inventory = inventoryView.topInventory
+                DeckCardsItem.getFromHands(player)?.let {
+                    DeckCardsItem.Menu.updateDeckCardsInventory(inventory, it)
+                    DeckCardsItem.playMoveCardSoundAround(player)
+                }
+            }, 1)
         }
 
         private fun getSlotToMove(rawSlot: Int, inventoryView: InventoryView, duplicateItem: ItemStack?): Int {

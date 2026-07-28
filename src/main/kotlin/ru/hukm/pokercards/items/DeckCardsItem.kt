@@ -3,6 +3,7 @@ package ru.hukm.pokercards.items
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.Sound
+import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.InventoryHolder
@@ -12,7 +13,6 @@ import ru.hukm.pokercards.items.deckInventory.PageScrollingItems
 import ru.hukm.pokercards.items.deckInventory.RandomizeCardsItem
 import ru.hukm.pokercards.utils.DeckOfCardsContainer
 import ru.hukm.pokercards.utils.configuration.Localization.Companion.getString
-import kotlin.collections.ArrayList
 
 class DeckCardsItem {
 
@@ -54,8 +54,8 @@ class DeckCardsItem {
             cardsItems = CardItem.getAllCards()
         }
 
-        fun playRandomizeCardsSoundAround(player: Player) {
-            player.world.playSound(player.location, Sound.ENTITY_VILLAGER_WORK_LIBRARIAN, 2.0f, 0.3f)
+        fun playRandomizeCardsSoundAround(entity: Entity) {
+            entity.world.playSound(entity.location, Sound.ENTITY_VILLAGER_WORK_LIBRARIAN, 2.0f, 0.3f)
         }
 
         fun playMoveCardSoundAround(player: Player) {

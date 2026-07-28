@@ -3,13 +3,16 @@ package ru.hukm.pokercards.entity
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Location
+import org.bukkit.entity.Entity
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Interaction
 import org.bukkit.entity.ItemDisplay
-import org.bukkit.entity.Player
+import org.bukkit.entity.LivingEntity
 import org.bukkit.inventory.ItemStack
 import org.bukkit.scheduler.BukkitTask
 import ru.hukm.pokercards.PokerCards
+import ru.hukm.pokercards.items.CardItem
+import ru.hukm.pokercards.items.DeckCardsItem
 import ru.hukm.pokercards.items.DisplayCardItem
 import ru.hukm.pokercards.utils.DeckOfCardsContainer
 import java.util.*
@@ -19,7 +22,6 @@ class DeckCardsEntity {
     companion object {
         fun spawn(blockPos: Location, item: ItemStack) {
             blockPos.add(0.5, 0.0, 0.5)
-
             spawnInteraction(blockPos, item, spawnCards(blockPos.clone()))
         }
 
@@ -32,6 +34,8 @@ class DeckCardsEntity {
             DeckOfCardsContainer.setInventoryItems(interaction, DeckOfCardsContainer.getInventoryItems(item)!!)
             DeckOfCardsContainer.setItemDisplayesUUID(interaction, itemDisplaysUUID)
             setCountCardsInName(interaction)
+
+            DeckCardsItem.playRandomizeCardsSoundAround(interaction)
         }
 
         private fun spawnCards(pos: Location): ArrayList<UUID> {
@@ -56,8 +60,8 @@ class DeckCardsEntity {
             interaction.customName = ChatColor.GREEN.toString() + DeckOfCardsContainer.getInventoryItems(interaction).count{ it != null }.toString()
         }
 
-        fun startTakeCardAnimation(whoTaken: Player, deckOfCardEntity: Interaction) {
-            val itemDisplay = whoTaken.world.spawnEntity(deckOfCardEntity.location, EntityType.ITEM_DISPLAY) as ItemDisplay
+        fun startTakeCardAnimation(whoTaken: Entity, deckOrCardEntity: Entity) {
+            val itemDisplay = whoTaken.world.spawnEntity(deckOrCardEntity.location, EntityType.ITEM_DISPLAY) as ItemDisplay
             itemDisplay.setItemStack(DisplayCardItem.get())
 
             val transformation = itemDisplay.transformation
@@ -70,16 +74,21 @@ class DeckCardsEntity {
             task = Bukkit.getScheduler().runTaskTimer(PokerCards.instance, Runnable {
                 try{
                     val itemDisplayLocation = itemDisplay.location
-                    val deltaLocation = whoTaken.eyeLocation.subtract(itemDisplay.location).add(0.0, -0.4, 0.0)
+
+                    val loc = if (whoTaken is LivingEntity) {
+                        whoTaken.eyeLocation
+                    } else whoTaken.location.add(0.0, 0.5, 0.0)
+
+                    val deltaLocation = loc.clone().subtract(itemDisplay.location).add(0.0, -0.4, 0.0)
 
                     itemDisplayLocation.add(deltaLocation.x / 5 * speed, deltaLocation.y / 5 * speed, deltaLocation.z / 5 * speed)
                     itemDisplayLocation.setDirection(deltaLocation.toVector())
                     itemDisplay.teleport(itemDisplayLocation)
-                    itemDisplay.setRotation(itemDisplay.yaw, itemDisplay.pitch + 90)
+                    itemDisplay.setRotation(itemDisplay.location.yaw, itemDisplay.location.pitch + 90)
 
                     speed += 0.1
 
-                    if(whoTaken.eyeLocation.distance(itemDisplayLocation) < 0.6) {
+                    if(loc.distance(itemDisplayLocation) < 0.6) {
                         itemDisplay.remove()
                         task.cancel()
                     }
